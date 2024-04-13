@@ -22,13 +22,45 @@
 // 256 => 26
 // 891 => 81
 
-int DeleteSecondDigit(int num)
+// int DeleteSecondDigit(int num)
+// {
+//     if (num >= 100 && num <= 999) // проверка числа на трехзначность
+//     {
+//         int ed = num % 10;
+//         int sot = num / 100;
+//         return sot * 10 + ed;
+//     }
+//     else
+//     {
+//         System.Console.WriteLine("Your input not three-digit number!");
+//         return 0;
+//     }
+// }
+
+// Console.Write("Input three-digit number: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+
+// System.Console.WriteLine(DeleteSecondDigit(num));
+
+// Програма 2
+// принимает на вход трехзначное число и возводит вторую цифру в степень, равную третьей цифре
+// например:
+// 487 => 8^7 = 2 097 152
+// 254 => 5^4 = 625
+// 617 => 1^7 = 1
+
+int Exponentiation(int num)
 {
     if (num >= 100 && num <= 999) // проверка числа на трехзначность
     {
         int ed = num % 10;
-        int sot = num / 100;
-        return sot * 10 + ed;
+        int dec = num / 10 % 10;
+        int result = 1;
+        for (int i = 0; i < ed; i++) // цикл возведения второй цифры в степень третьей цифры
+        {
+            result = result * dec;
+        }
+        return result;
     }
     else
     {
@@ -40,11 +72,4 @@ int DeleteSecondDigit(int num)
 Console.Write("Input three-digit number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-System.Console.WriteLine(DeleteSecondDigit(num));
-
-// Програма 2
-// принимает на вход трехзначное число и возводит вторую цифру в степень, равную третьей цифре
-// например:
-// 487 => 8^7 = 2 097 152
-// 254 => 5^4 = 625
-// 617 => 1^7 = 1
+System.Console.WriteLine(Exponentiation(num));
