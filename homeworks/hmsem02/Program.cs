@@ -19,46 +19,100 @@
 // MultiplicityCheck(num);
 
 
-// Задача 2
-// программа принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0 
-// и выдаёт номер координатной четверти плоскости, в которой находится эта точка.
+// // Задача 2
+// // программа принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0 
+// // и выдаёт номер координатной четверти плоскости, в которой находится эта точка.
 
-int CoordQuarter(int num1, int num2)
+// int CoordQuarter(int num1, int num2)
+// {
+//     if(num1 > 0)
+//     {
+//         if(num2 > 0)
+//         {
+//             return 1;
+//         }
+//         else
+//         {
+//             return 4;
+//         }
+//     }
+//     else
+//     {
+//         if(num2 > 0)
+//         {
+//             return 2;
+//         }
+//         else
+//         {
+//             return 3;
+//         }
+//     }
+// }
+
+// Console.WriteLine("Введите координату X, не равную 0: ");
+// int num1 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координату Y, не равную 0: ");
+// int num2 = Convert.ToInt32(Console.ReadLine());
+
+// if(num1 == 0 || num2 == 0)
+// {
+//     System.Console.WriteLine("Введите координаты X и Y НЕ равные 0");
+// }
+// else
+// {
+//     System.Console.WriteLine($"Точка с координатами X:Y - [{num1}:{num2}] принадлежит {CoordQuarter(num1, num2)} четверти.");
+// }
+
+// Задача 3
+// программа принимает на вход целое число из отрезка [10, 99] и показывает наибольшую цифру числа.
+
+int BiggestDigit (int num)
 {
-    if(num1 > 0)
+    int result = 0;
+    if (num >= 10 && num <= 99) // проверка числа на двузначность
     {
-        if(num2 > 0)
+        int ed = num % 10;
+        int dec = num / 10;
+        if(ed == dec)
         {
-            return 1;
+            result = 11;
         }
         else
         {
-            return 4;
+            if(ed > dec)
+            {
+                result = ed;
+            }
+            else
+            {
+                result = dec;
+            }
         }
     }
     else
     {
-        if(num2 > 0)
-        {
-            return 2;
-        }
-        else
-        {
-            return 3;
-        }
+        result = 111;
     }
+    return result;
 }
 
-Console.WriteLine("Введите координату X, не равную 0: ");
-int num1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату Y, не равную 0: ");
-int num2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите целое число из отрезка [10, 99]: ");
+int num = Convert.ToInt32(Console.ReadLine());
 
-if(num1 == 0 || num2 == 0)
+int res = BiggestDigit(num);
+if (res == 111)
 {
-    System.Console.WriteLine("Введите координаты X и Y НЕ равные 0");
+    System.Console.WriteLine($"Введено на двузначное число!");
 }
 else
 {
-    System.Console.WriteLine($"Точка с координатами X:Y - [{num1}:{num2}] принадлежит {CoordQuarter(num1, num2)} четверти.");
+
+    if(res == 11)
+    {
+        System.Console.WriteLine($"Цфры в указанном числе [{num}] равны!");
+    }
+    else
+    {
+        System.Console.WriteLine($"Большая цифра в указанном числе [{num}] - {res}");
+    }
 }
