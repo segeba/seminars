@@ -63,56 +63,87 @@
 //     System.Console.WriteLine($"Точка с координатами X:Y - [{num1}:{num2}] принадлежит {CoordQuarter(num1, num2)} четверти.");
 // }
 
-// Задача 3
-// программа принимает на вход целое число из отрезка [10, 99] и показывает наибольшую цифру числа.
+// // Задача 3
+// // программа принимает на вход целое число из отрезка [10, 99] и показывает наибольшую цифру числа.
 
-int BiggestDigit (int num)
+// int BiggestDigit (int num)
+// {
+//     int result = 0;
+//     if (num >= 10 && num <= 99) // проверка числа на двузначность
+//     {
+//         int ed = num % 10;
+//         int dec = num / 10;
+//         if(ed == dec)
+//         {
+//             result = 11;
+//         }
+//         else
+//         {
+//             if(ed > dec)
+//             {
+//                 result = ed;
+//             }
+//             else
+//             {
+//                 result = dec;
+//             }
+//         }
+//     }
+//     else
+//     {
+//         result = 111;
+//     }
+//     return result;
+// }
+
+// Console.WriteLine("Введите целое число из отрезка [10, 99]: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+
+// int res = BiggestDigit(num);
+// if (res == 111)
+// {
+//     System.Console.WriteLine($"Введено на двузначное число!");
+// }
+// else
+// {
+
+//     if(res == 11)
+//     {
+//         System.Console.WriteLine($"Цфры в указанном числе [{num}] равны!");
+//     }
+//     else
+//     {
+//         System.Console.WriteLine($"Большая цифра в указанном числе [{num}] - {res}");
+//     }
+// }
+
+// Задача 4
+// программа принимает на вход натуральное число N, а на выходе показывает его цифры через запятую.
+
+void NumberCom(int num)
 {
-    int result = 0;
-    if (num >= 10 && num <= 99) // проверка числа на двузначность
+    int count = 0;
+    var num1 = num.ToString();
+    while(num > 0)
     {
-        int ed = num % 10;
-        int dec = num / 10;
-        if(ed == dec)
-        {
-            result = 11;
-        }
-        else
-        {
-            if(ed > dec)
-            {
-                result = ed;
-            }
-            else
-            {
-                result = dec;
-            }
-        }
+        num = num / 10;
+        count ++;
     }
-    else
+    Console.WriteLine($"Количество цифр в введенном числе - {count}:");
+    System.Console.Write(num1[0]);
+    for(int i = 1; i < count; i++)
     {
-        result = 111;
+        System.Console.Write($", {num1[i]}");
     }
-    return result;
 }
-
-Console.WriteLine("Введите целое число из отрезка [10, 99]: ");
+Console.WriteLine("Введите натуральное число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-int res = BiggestDigit(num);
-if (res == 111)
+if(num > 0)
 {
-    System.Console.WriteLine($"Введено на двузначное число!");
+    NumberCom(num);
 }
 else
 {
-
-    if(res == 11)
-    {
-        System.Console.WriteLine($"Цфры в указанном числе [{num}] равны!");
-    }
-    else
-    {
-        System.Console.WriteLine($"Большая цифра в указанном числе [{num}] - {res}");
-    }
+    Console.WriteLine("Введено число меньше или равное 0!");
 }
