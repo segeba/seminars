@@ -65,3 +65,19 @@ PrintArray(array);
 System.Console.WriteLine();
 
 System.Console.WriteLine($"The quantity of even numbers in the array: {CountEvenNumbers(array)}");
+
+// Задача 3: Напишите программу, которая перевернёт одномерный массив 
+// (первый элемент станет последним, второй – предпоследним и т.д.)
+
+int[] FlipArray(int[] array)
+{
+    int[] flipArray = new int[array.Length];
+    for (int i = 0; i < flipArray.Length; i++)
+    {
+        flipArray[i] = array[array.Length - i - 1];
+    }
+    return flipArray;
+}
+
+System.Console.WriteLine("The fliped array: ");
+PrintArray(FlipArray(array));
