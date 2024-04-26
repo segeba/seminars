@@ -1,15 +1,25 @@
-﻿// Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B с помощью рекурсии.
-// A = 3; B = 5 -> 243 (3⁵)
-// A = 2; B = 3 -> 8
+﻿// Задача 1: Задайте значения M и N. 
+// Напишите программу, которая выведет все натуральные числа в промежутке от M до N. 
+// Использовать рекурсию, не использовать циклы.
 
-int Mult(int a, int b)
+void FromMtoN(int m, int n)
 {
-    if (b != 0)
+    if (m > n)
     {
-        return a * Mult(a, b - 1);
+        FromMtoN(m - 1, n);
+        System.Console.Write(m + " ");
     }
-
-    return 1;
+    else if (n > m)
+    {
+        FromMtoN(m, n - 1);
+        System.Console.Write(n + " ");
+    }
+    else System.Console.Write(m + " ");
 }
+System.Console.WriteLine("Input number M: ");
+int m = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("Input number N: ");
+int n = Convert.ToInt32(Console.ReadLine());
 
-System.Console.WriteLine(Mult(2, 3));
+System.Console.WriteLine($"Natural numbers from {m} to {n}:");
+FromMtoN(m, n);
