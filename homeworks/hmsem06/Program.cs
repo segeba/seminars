@@ -22,21 +22,48 @@
 
 // System.Console.WriteLine(CharArrayToString(chars));
 
-// Задача 2: Задайте строку, содержащую латинские буквы в обоих регистрах. 
-// Сформируйте строку, в которой все заглавные буквы заменены на строчные.
+// // Задача 2: Задайте строку, содержащую латинские буквы в обоих регистрах. 
+// // Сформируйте строку, в которой все заглавные буквы заменены на строчные.
 
-string ConvertString (string str)
-{
-    string convStr = string.Empty;
-    for (int i = 0; i < str.Length; i++)
-    {
-        convStr = convStr + char.ToLower(str[i]);
-    }
-    return convStr;
-}
+// string ConvertString (string str)
+// {
+//     string convStr = string.Empty;
+//     for (int i = 0; i < str.Length; i++)
+//     {
+//         convStr = convStr + char.ToLower(str[i]);
+//     }
+//     return convStr;
+// }
 
-System.Console.WriteLine("Enter a string with uppercase and lowercase characters: ");
-string str = Convert.ToString(Console.ReadLine());
+// System.Console.WriteLine("Enter a string with uppercase and lowercase characters: ");
+// string str = Convert.ToString(Console.ReadLine());
 
 // System.Console.WriteLine("The entered string with characters converted to lowercase: ");
 // System.Console.WriteLine(ConvertString(str));
+
+// // Задача 3: Задайте произвольную строку. 
+// // Выясните, является ли она палиндромом.
+
+// bool CheckPolindrom(string str)
+// {
+//     int count = 0;  
+//     for (int i = 0; i < str.Length / 2; i++)
+//     {
+//         if (str[i] == str[str.Length - i - 1])
+//         {
+//             count=count + 1;
+//         }
+//         else return false;
+//     }
+//     if (count == str.Length/2) return true;
+//     return false;
+// }
+
+// System.Console.WriteLine("Enter a string: ");
+// string str = Convert.ToString(Console.ReadLine());
+
+// if (CheckPolindrom(str))
+// {
+//     System.Console.WriteLine("The entered string is polindrome");
+// }
+// else System.Console.WriteLine("The entered string is NOT polindrome");
