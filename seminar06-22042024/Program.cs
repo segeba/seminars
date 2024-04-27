@@ -31,30 +31,48 @@
 
 // System.Console.WriteLine(CharArrayToString(InputChars()));
 
-// На основе символов строки (тип string) сформировать массив
-// символов (тип char[]). Вывести массив на экран.
-// Указание
-// Метод строки ToCharArray() не использовать.
-// Пример
-// “Hello!” => [‘H’, ‘e’, ‘l’, ‘l’, ‘o’, ‘!’ ]
+// // На основе символов строки (тип string) сформировать массив
+// // символов (тип char[]). Вывести массив на экран.
+// // Указание
+// // Метод строки ToCharArray() не использовать.
+// // Пример
+// // “Hello!” => [‘H’, ‘e’, ‘l’, ‘l’, ‘o’, ‘!’ ]
 
-char[] StringToCharArray(string str)
+// char[] StringToCharArray(string str)
+// {
+//     char[] chars = new char[str.Length];
+//     for (int i = 0; i < chars.Length; i++)
+//     {
+//         chars[i] = str[i];
+//     }
+//     return chars;
+// }
+
+// void PrintArray(char[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         System.Console.Write(array[i] + " ");
+//     }
+//     System.Console.WriteLine();
+// }
+
+// PrintArray(StringToCharArray("Hello!"));
+
+int Sum (string str)
 {
-    char[] chars = new char[str.Length];
-    for (int i = 0; i < chars.Length; i++)
+    int result=0;
+    string str1 = "aoeiuy" ;
+    for (int i=0; i<str.Length;i++)
     {
-        chars[i] = str[i];
+        for (int j=0;j<str1.Length;j++)
+        {
+            if (str[i]==str1[j])
+            {
+                result=result+1;
+            }
+        }
     }
-    return chars;
+    return result;
 }
-
-void PrintArray(char[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        System.Console.Write(array[i] + " ");
-    }
-    System.Console.WriteLine();
-}
-
-PrintArray(StringToCharArray("Hello!"));
+System.Console.WriteLine(Sum("ifwbuofdjhscgniu"));
