@@ -67,3 +67,8 @@
 //     System.Console.WriteLine("The entered string is polindrome");
 // }
 // else System.Console.WriteLine("The entered string is NOT polindrome");
+
+// Задача 4*: Задайте строку, состоящую из слов, разделенных пробелами. 
+// Сформировать строку, в которой слова расположены в обратном порядке. 
+// В полученной строке слова должны быть также разделены пробелами.
+
